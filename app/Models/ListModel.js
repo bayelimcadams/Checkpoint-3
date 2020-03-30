@@ -18,20 +18,20 @@ export default class List {
   get Template() {
     return /*html*/`
       <div style="margin-left: 20px; margin-right: 20px;"
-      class="col-3 border border-warning rounded">
+      class="col-3 border border-warning">
       <button type="button" class="w-100 text-right close" onclick="app.listController.delete('${this.id}')">
       <span>&times;</span>
       </button>
         <h3 class="text-black">${this.listName}</h3>
-        <h5 style="padding-left:10px;" class="text-left" id="tasks">Tasks:</h5>
-        <dl>
-          ${this.Tasks}
-        </dl>
+        <h5 style="padding-left:10px;" class="w-100 text-left"><i>Tasks:</i></h5>
+
+        <p id="tasks">${this.tasks}</p>
+
         <form onsubmit="app.taskController.createTask(event, '${this.id}')">
           <div class="form-group">
-            <label for="taskName">${this.Tasks}</label>
+            <label for="taskName">${this.tasks}</label>
             <input type="text" name="taskName" class="form-control" placeholder="Add new task...">
-            <button type="submit" class="w-25 btn btn-warning btn-sm">+</button>
+            <button type="submit" class="w-25 btn btn-warning btn-sm"><b>+</b></button>
           </div>
         </form>
       </div>

@@ -21,6 +21,7 @@ h3 {
 }
 
 
+
 /* event.preventDefault() - prevents reload ?
 
 <form onsubmit="app.listController.addItem()"> ?

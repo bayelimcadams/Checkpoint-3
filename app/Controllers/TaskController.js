@@ -10,7 +10,7 @@ function _drawTasks() {
   let template = ''
   let tasks = _store.State.tasks
 
-  tasks.forEach(task => template += task.TaskTemp)
+  tasks.forEach(task => template += task.Template)
 
   document.getElementById("tasks").innerHTML = template
 }
