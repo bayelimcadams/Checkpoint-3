@@ -1,15 +1,18 @@
-import List from "./Models/List.js";
+import List from "./Models/ListModel.js";
+import Task from "./Models/TaskModel.js"
 
 let _state = {
   /** @type {List[]} */
-  lists: []
+  lists: [],
+  /** @type {Task[]} */
+  tasks: []
 };
 
 //NOTE You should not need to change the code from this point down
 
 //NOTE this method will get the lists from local storage at the start of the app
 function _loadState() {
-  let data = JSON.parse(localStorage.getItem("TaskMaster"));
+  let data = JSON.parse(localStorage.getItem("Checkpoint-3"));
   if (data) {
     data.lists = data.lists.map(l => new List(l));
     _state = data;
@@ -27,7 +30,7 @@ class Store {
 
   //NOTE call saveState everytime you change the state in any way
   saveState() {
-    localStorage.setItem("TaskMaster", JSON.stringify(_state));
+    localStorage.setItem("Checkpoint-3", JSON.stringify(_state));
   }
 }
 

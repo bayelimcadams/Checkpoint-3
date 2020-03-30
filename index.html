@@ -25,23 +25,19 @@
     <main>
   
   
-      <div class="addlist container-fluid">
-        <div class="row text-center">
-          <div class="col-4 m-auto">
-            <form class="w-100" onsubmit="app.listController.create(event)">
-              <div class="form-group">
+      <div class="container-fluid bg-info">
+        <div class="row addlist">
+          <div class="col-12">
+            <form class="w-25 m-auto text-center" onsubmit="app.listController.create(event)">
+              <div class="form-group text-center">
+                <label for="listName"><p>Create a new list!</p></label>
                 <input type="text" name="listName" class="form-control" placeholder="List name...">
               </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-warning btn-sm">Create</button>
             </form>
           </div>
         </div>
-  
-        <div class="row" id="lists">
-          <div class="col-12 m-auto">
-            
-          </div>
-        </div>
+        <div class="row text-center" id="lists"></div>
       </div>
   
   

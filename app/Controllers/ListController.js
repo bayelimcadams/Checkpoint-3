@@ -1,7 +1,17 @@
-import ListService from "../Services/ListService.js";
+//NOTE in charge of taking user input from the view, and passing it on to the service. Also in charge of drawing the results of those actions to the view
 
-//TODO Don't forget to render to the screen after every data change.
-function _drawLists() {}
+import ListService from "../Services/ListService.js";
+import _store from '../store.js'
+
+
+function _drawLists() {
+  let template = ''
+  let lists = _store.State.lists
+
+  lists.forEach(list => template += list.Template)
+
+  document.getElementById("lists").innerHTML = template
+}
 
 //Public
 export default class ListController {
@@ -10,5 +20,25 @@ export default class ListController {
     _drawLists();
   }
 
-  //TODO: Your app will need the ability to create, and delete both lists and listItems
+
+
+  create(event) {
+    event.preventDefault()
+    let formData = event.target
+    let newList = {
+      listName: formData.listName.value
+    }
+
+    ListService.create(newList)
+    _drawLists()
+    formData.reset()
+  }
+
+
+  delete(listId) {
+    ListService.delete(listId)
+    _drawLists();
+  }
+
+
 }
