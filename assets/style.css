@@ -1,0 +1,16 @@
+header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.addlist {
+  padding-top: 20px;
+  padding-bottom:20px;
+  outline: solid black 2px;
+}
+
+
+/* event.preventDefault() - prevents reload ?
+
+<form onsubmit="app.listController.addItem()"> ?
+
+ */
