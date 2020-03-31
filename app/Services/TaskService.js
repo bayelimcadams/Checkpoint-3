@@ -3,10 +3,16 @@ import _store from "../store.js";
 
 //Public
 class TaskService {
-
-    createTask(newTaskData) {
+ 
+    createTask(newTaskData, listId) {
       let newTask = new Task(newTaskData)
-      _store.State.tasks.push(newTask)
+      // find the list and push task onto list, refer to pizzashop addtopping
+      let list = _store.State.lists.find(list => list.id
+        == listId)
+      list.tasks.push(newTask)
+      console.log(list)
+
+      // _store.State.tasks.push(newTask)
       _store.saveState()
     }
 

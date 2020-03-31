@@ -34,11 +34,24 @@ export default class ListController {
     formData.reset()
   }
 
-
   delete(listId) {
+    let confirmed = window.confirm("Are you sure?")
+    if(confirmed) {
     ListService.delete(listId)
     _drawLists();
+    }
   }
-
+  createTask(event) {
+    event.preventDefault()
+    // debugger
+    let formData = event.target
+    let newTask = {
+      taskName: formData.taskName.value
+    }
+  
+    ListService.createTask(newTask)
+    _drawLists()
+    formData.reset()
+  }
 
 }

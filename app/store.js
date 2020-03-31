@@ -14,7 +14,14 @@ let _state = {
 function _loadState() {
   let data = JSON.parse(localStorage.getItem("Checkpoint-3"));
   if (data) {
-    data.lists = data.lists.map(l => new List(l));
+    data.lists = data.lists.map(l =>{
+      let list = new List(l)
+
+      list.tasks = list.tasks.map(t => new Task(t))
+      return list;
+
+    });
+
     _state = data;
   }
 }

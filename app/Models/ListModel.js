@@ -1,13 +1,16 @@
 import { generateId } from "../utils.js";
 import Task from "./TaskModel.js"
 
+
+// 
+
 export default class List {
   constructor(data) {
 
     this.listName = data.listName;
     this.id = data.id || generateId();
     /** @type {Task[]} */
-    this.tasks = []
+    this.tasks = data.tasks || []
 
         //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
   }
@@ -27,7 +30,7 @@ export default class List {
 
         <p id="tasks">${this.tasks}</p>
 
-        <form onsubmit="app.taskController.createTask(event, '${this.id}')">
+        <form onsubmit="app.listController.createTask(event, '${this.id}')">
           <div class="form-group">
             <label for="taskName">${this.tasks}</label>
             <input type="text" name="taskName" class="form-control" placeholder="Add new task...">

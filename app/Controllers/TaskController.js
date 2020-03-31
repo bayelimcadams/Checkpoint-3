@@ -23,17 +23,6 @@ export default class TaskController {
   }
 
 
-createTask(event) {
-  event.preventDefault()
-  let formData = event.target
-  let newTask = {
-    taskName: formData.taskName.value
-  }
-
-  TaskService.createTask(newTask)
-  _drawTasks()
-  formData.reset()
-}
 
   delete(taskId) {
     TaskService.deleteTask(taskId)
