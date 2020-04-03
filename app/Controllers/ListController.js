@@ -41,6 +41,7 @@ export default class ListController {
     _drawLists();
     }
   }
+
   createTask(event) {
     event.preventDefault()
     // debugger
@@ -52,6 +53,14 @@ export default class ListController {
     ListService.createTask(newTask)
     _drawLists()
     formData.reset()
+  }
+
+  deleteTask(taskId) {
+    let confirmed = window.confirm("Are you sure?")
+    if(confirmed) {
+    ListService.delete(taskId)
+    _drawLists();
+    }
   }
 
 }

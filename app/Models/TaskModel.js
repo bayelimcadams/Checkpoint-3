@@ -11,8 +11,8 @@ export default class Task {
   get Template() {
     return /*html*/`
       <dd>
-      <h6>${this.taskName}</h6>
-      <button type="button" class="text-right close" onclick="app.taskController.delete('${this.id}')">
+      <h6 style="padding-left: 10px;">${this.taskName}</h6>
+      <button type="button" class="close" onclick="app.listController.deleteTask('${this.id}')">
       <span>&times;</span>
       </dd>
     `

@@ -28,11 +28,8 @@ export default class List {
         <h3 class="text-black">${this.listName}</h3>
         <h5 style="padding-left:10px;" class="w-100 text-left"><i>Tasks:</i></h5>
 
-        <p id="tasks">${this.tasks}</p>
-
         <form onsubmit="app.listController.createTask(event, '${this.id}')">
           <div class="form-group">
-            <label for="taskName">${this.tasks}</label>
             <input type="text" name="taskName" class="form-control" placeholder="Add new task...">
             <button type="submit" class="w-25 btn btn-warning btn-sm"><b>+</b></button>
           </div>

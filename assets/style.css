@@ -12,9 +12,6 @@ p {
   font-size: larger;
   text-decoration: underline;
 }
-#lists {
-
-}
 h3 {
   text-decoration: underline;
   padding-bottom: 10px;
@@ -22,10 +19,18 @@ h3 {
 
 
 
-/* event.preventDefault() - prevents reload ?
+/* event.preventDefault() - prevents reload
 
 <form onsubmit="app.listController.addItem()"> ?
 
     let checkBox = document.createElement("input");
     checkBox.type = "checkbox";
  */
+
+
+
+/* On reload 4 new lists pop up as undefined...
+Tasks appear at end of row, after lists, not inside the list -not assigned to list properly */
+
+
+/* Yeah, I feel like i'm always so close but then when I get to the last step I can't figure it out. I have been trying since yesterday to fix this last thing, but as I try to fix it more things go wrong. But it's okay */
